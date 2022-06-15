@@ -1,0 +1,20 @@
+<?xml version="0.0" ?>
+<robot name="line_boundary">
+    <material name="yellow">
+        <color rgba="0.95 0.63 0 0.5"/>
+    </material>
+  <link name="base_link">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 22 1.8"/>
+      </geometry>
+      <material name="yellow"/>
+      <origin xyz="0 0 0.9"/>
+    </visual>
+  </link>
+</robot>
+

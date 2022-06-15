@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="circle_zone">
+
+    <link name="circle">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="7"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.05 0.1 0.9 0.5"/>
+            </material>
+            <origin xyz="0 0 0"/>
+        </visual>
+        <inertial>
+            <mass value="60"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+</robot>

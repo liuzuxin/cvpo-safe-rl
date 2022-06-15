@@ -1,0 +1,101 @@
+<?xml version="0.0" ?>
+<robot name="room_20_20">
+  <link name="wall_top">
+    <inertial>
+        <mass value="1"/>
+        <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <geometry>
+	    <box size="20.2 0.2 2"/>
+      </geometry>
+      <origin xyz="0 10 1"/>
+    </visual>
+    <collision>
+      <geometry>
+	    <box size="20.2 0.2 2"/>
+      </geometry>
+      <origin xyz="0 10 1"/>
+    </collision>
+  </link>
+
+  <link name="wall_right">
+    <inertial>
+        <mass value="1"/>
+        <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <geometry>
+	    <box size="0.2 20 2"/>
+      </geometry>
+      <origin xyz="10 0 1"/>
+    </visual>
+    <collision>
+      <geometry>
+	    <box size="0.2 20 2"/>
+      </geometry>
+      <origin xyz="10 0 1"/>
+    </collision>
+  </link>
+
+
+  <joint name="top_to_right" type="fixed">
+    <origin xyz="0 0 0"/>
+    <parent link="wall_top"/>
+    <child link="wall_right"/>
+  </joint>
+
+    <link name="wall_left">
+    <inertial>
+        <mass value="1"/>
+        <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <geometry>
+	    <box size="0.2 20 2"/>
+      </geometry>
+      <origin xyz="-10 0 1"/>
+    </visual>
+    <collision>
+      <geometry>
+	    <box size="0.2 20 2"/>
+      </geometry>
+      <origin xyz="-10 0 1"/>
+    </collision>
+  </link>
+
+
+  <joint name="top_to_left" type="fixed">
+    <origin xyz="0.0 0.0 0.0"/>
+    <parent link="wall_top"/>
+    <child link="wall_left"/>
+  </joint>
+
+  <link name="wall_bottom">
+    <inertial>
+        <mass value="1"/>
+        <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <geometry>
+	    <box size="20.2 0.2 2"/>
+      </geometry>
+      <origin xyz="0 -10 1"/>
+    </visual>
+    <collision>
+      <geometry>
+	    <box size="20.2 0.2 2"/>
+      </geometry>
+      <origin xyz="0 -10 1"/>
+    </collision>
+  </link>
+
+<joint name="right_to_bottom" type="fixed">
+    <origin xyz="0.0 0.0 0.0"/>
+    <parent link="wall_right"/>
+    <child link="wall_bottom"/>
+  </joint>
+
+
+</robot>
+

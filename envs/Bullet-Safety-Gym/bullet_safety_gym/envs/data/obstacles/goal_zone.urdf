@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="goal_zone">
+
+    <link name="goal">
+        <visual>
+            <geometry>
+                <cylinder length="0.1" radius="1.3"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.05 0.9 0.1 1"/>
+            </material>
+            <origin xyz="0 0 0.05"/>
+        </visual>
+        <inertial>
+            <mass value="1"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
+
+</robot>

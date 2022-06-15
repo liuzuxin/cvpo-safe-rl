@@ -1,0 +1,63 @@
+###################### env configs ######################
+env: 'Safexp-CarButton1-v0'
+# Maximum steps per episode, use this to terminate one episode if it takes too many steps.
+# This is a environment-specific parameter. Determine this carefully based on your gym env.
+# If this is -1, it will be based on the env._max_episode_steps
+timeout_steps: 400
+cost_limit: &COST_LIM 10
+seed: 0
+mode: 'train'
+
+###################### runner configs ######################
+device: "cpu"
+# if device is gpu, specify the gpu id
+device_id: 0
+# if device is cpu, specify the thread num
+threads: 4
+policy: "cvpo"
+epochs: 300
+save_freq: 2
+exp_name: null
+# data dir to save the logger files
+data_dir: null
+load_dir: null
+pretrain_dir: null
+verbose: True
+
+sample_episode_num: 20
+episode_rerun_num: 40
+evaluate_episode_num: 20
+
+cvpo:
+    num_qc: 1
+    cost_limit: *COST_LIM
+    use_cost_decay: False
+    cost_start: 300
+    cost_end: *COST_LIM
+    decay_epoch: 200
+    dual_constraint: 0.1 
+    kl_mean_constraint: 0.001 
+    kl_var_constraint: 0.001 
+    kl_constraint: 0.01 
+    mstep_iteration_num: 6
+    alpha_mean_scale: 1.0 
+    alpha_var_scale: 100.0 
+    alpha_scale: 10.0 
+    alpha_mean_max: 0.1 
+    alpha_var_max: 10.0 
+    alpha_max: 1.0 
+    sample_action_num: 32 
+    actor_lr: 0.002
+    critic_lr: 0.001
+    ac_model: "mlp"
+    # actor critic model_config:
+    hidden_sizes: [256, 256]
+    # Entropy regularization coefficient.
+    gamma: 0.99
+    polyak: 0.995
+    num_q: 2
+    worker_config:
+        # Collect some random policy data before the overall training begin
+        warmup_steps: 0
+        batch_size: 300
+        buffer_size: 80000
