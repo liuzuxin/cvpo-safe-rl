@@ -6,11 +6,13 @@ CVPO is a novel Expectation-Maximization approach to naturally incorporate const
 
 If you find this code useful, consider to cite:
 ```bibtex
-@article{liu2022constrained,
+@inproceedings{liu2022constrained,
   title={Constrained variational policy optimization for safe reinforcement learning},
-  author={Liu, Zuxin and Cen, Zhepeng and Isenbaev, Vladislav and Liu, Wei and Wu, Zhiwei Steven and Li, Bo and Zhao, Ding},
-  journal={arXiv preprint arXiv:2201.11927},
-  year={2022}
+  author={Liu, Zuxin and Cen, Zhepeng and Isenbaev, Vladislav and Liu, Wei and Wu, Steven and Li, Bo and Zhao, Ding},
+  booktitle={International Conference on Machine Learning},
+  pages={13644--13668},
+  year={2022},
+  organization={PMLR}
 }
 ```
 
