@@ -452,7 +452,7 @@ class CVPO(Policy):
         Update the qc network
         '''
         def critic_loss():
-            obs, act, reward, obs_next, done = to_tensor(data['obs']), to_tensor(
+            obs, act, cost, obs_next, done = to_tensor(data['obs']), to_tensor(
                 data['act']), to_tensor(data['cost']), to_tensor(
                     data['obs2']), to_tensor(data['done'])
 
@@ -464,8 +464,8 @@ class CVPO(Policy):
                 act_next = pi_dist.sample()
                 # Target Q-values
                 q_pi_targ, _ = self.critic_forward(self.qc_targ, obs_next, act_next)
-                # backup = reward + self.gamma * (1 - done) * q_pi_targ
-                backup = reward + self.gamma * q_pi_targ
+                # backup = cost + self.gamma * (1 - done) * q_pi_targ
+                backup = cost + self.gamma * q_pi_targ
             # MSE loss against Bellman backup
             loss_q = self.qc.loss(backup, q_list)
             # Useful info for logging
