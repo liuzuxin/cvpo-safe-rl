@@ -1,5 +1,8 @@
 Constrained Variational Policy Optimization for Safe Reinforcement Learning
 ==================================
+
+> ⚠️️ **Faster and Better Implementations Available**: This repo is deprecated and will not be maintained. We recommend to use the new implementation of CVPO in the following repo: [https://github.com/liuzuxin/fsrl](https://github.com/liuzuxin/fsrl).
+
 This project provides the open source implementation of the CVPO method introduced in the ICML 2022 paper: "Constrained Variational Policy Optimization for Safe Reinforcement Learning" [(Liu, et al. 2022)](https://arxiv.org/abs/2201.11927). 
 
 CVPO is a novel Expectation-Maximization approach to naturally incorporate constraints during the policy learning: 1) a provable optimal non-parametric variational distribution could be computed in closed form after a convex optimization (E-step); 2) the policy parameter is improved within the trust region based on the optimal variational distribution (M-step). It decomposes the safe RL problem into a convex optimization phase and a supervised learning phase, which yields a more stable training performance and better constraint satisfaction results. 
